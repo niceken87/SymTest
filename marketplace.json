@@ -1,0 +1,78 @@
+{
+  "name": "financial-services-plugins",
+  "source": "anthropics/financial-services-plugins",
+  "version": "1.0.0",
+  "description": "A curated collection of financial services plugins for Claude Code",
+  "plugins": [
+    {
+      "name": "financial-analysis",
+      "version": "1.0.0",
+      "description": "Core financial analysis toolkit. Required by all other financial plugins.",
+      "required": true,
+      "entrypoint": "plugins/financial-analysis/server.py",
+      "tools": [
+        "dcf_valuation",
+        "calculate_wacc",
+        "financial_ratios",
+        "working_capital_analysis",
+        "sensitivity_analysis"
+      ]
+    },
+    {
+      "name": "investment-banking",
+      "version": "1.0.0",
+      "description": "M&A advisory, deal valuation, and transaction structuring tools.",
+      "requires": ["financial-analysis"],
+      "entrypoint": "plugins/investment-banking/server.py",
+      "tools": [
+        "comps_analysis",
+        "precedent_transactions",
+        "merger_model",
+        "synergies_analysis",
+        "deal_structure"
+      ]
+    },
+    {
+      "name": "equity-research",
+      "version": "1.0.0",
+      "description": "Public equity valuation, earnings modeling, and stock analysis.",
+      "requires": ["financial-analysis"],
+      "entrypoint": "plugins/equity-research/server.py",
+      "tools": [
+        "earnings_model",
+        "price_target",
+        "relative_valuation",
+        "eps_forecast",
+        "analyst_consensus"
+      ]
+    },
+    {
+      "name": "private-equity",
+      "version": "1.0.0",
+      "description": "LBO modeling, fund returns calculation, and portfolio company analysis.",
+      "requires": ["financial-analysis"],
+      "entrypoint": "plugins/private-equity/server.py",
+      "tools": [
+        "lbo_model",
+        "irr_calculator",
+        "moic_calculator",
+        "fund_returns",
+        "debt_schedule"
+      ]
+    },
+    {
+      "name": "wealth-management",
+      "version": "1.0.0",
+      "description": "Portfolio construction, asset allocation, and risk-adjusted return analysis.",
+      "requires": ["financial-analysis"],
+      "entrypoint": "plugins/wealth-management/server.py",
+      "tools": [
+        "asset_allocation",
+        "portfolio_risk",
+        "sharpe_ratio",
+        "rebalancing_plan",
+        "tax_loss_harvesting"
+      ]
+    }
+  ]
+}

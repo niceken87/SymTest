@@ -1,0 +1,48 @@
+{
+  "pluginMarketplaces": [
+    {
+      "name": "financial-services-plugins",
+      "source": "anthropics/financial-services-plugins",
+      "addedAt": "2026-05-04T00:00:00Z"
+    }
+  ],
+  "installedPlugins": [
+    "financial-analysis@financial-services-plugins",
+    "investment-banking@financial-services-plugins",
+    "equity-research@financial-services-plugins",
+    "private-equity@financial-services-plugins",
+    "wealth-management@financial-services-plugins"
+  ],
+  "mcpServers": {
+    "financial-analysis": {
+      "command": "python",
+      "args": ["plugins/financial-analysis/server.py"],
+      "pluginSource": "financial-services-plugins",
+      "description": "Core financial analysis tools (required by all other financial plugins)"
+    },
+    "investment-banking": {
+      "command": "python",
+      "args": ["plugins/investment-banking/server.py"],
+      "pluginSource": "financial-services-plugins",
+      "description": "M&A advisory, deal valuation, and transaction analysis tools"
+    },
+    "equity-research": {
+      "command": "python",
+      "args": ["plugins/equity-research/server.py"],
+      "pluginSource": "financial-services-plugins",
+      "description": "Equity valuation, earnings modeling, and stock analysis tools"
+    },
+    "private-equity": {
+      "command": "python",
+      "args": ["plugins/private-equity/server.py"],
+      "pluginSource": "financial-services-plugins",
+      "description": "LBO modeling, fund returns, and portfolio company analysis tools"
+    },
+    "wealth-management": {
+      "command": "python",
+      "args": ["plugins/wealth-management/server.py"],
+      "pluginSource": "financial-services-plugins",
+      "description": "Portfolio construction, asset allocation, and risk management tools"
+    }
+  }
+}
